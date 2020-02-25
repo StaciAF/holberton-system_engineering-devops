@@ -1,2 +1,2 @@
 #!/bin/bash
-head -${2}
+perl -ne 'print if $. % 2 == 0'
