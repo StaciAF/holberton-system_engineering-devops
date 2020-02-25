@@ -1,2 +1,2 @@
 #!/bin/bash
-perl -ne 'print ((0 == $. % 2) ? $_ : "")'
+perl -ne 'print ((0 != $. % 2) ? $_ : "")'
