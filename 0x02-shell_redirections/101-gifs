@@ -1,2 +1,2 @@
 #!/bin/bash
-find *.gif -ilname -printf "%f%s"
+find /path/to/ -name "*.gif" -ilname -printf "%f%s"
