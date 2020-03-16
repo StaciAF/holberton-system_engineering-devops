@@ -1,32 +1,21 @@
-extern printf
+extern	printf			; the C function, to be called
 
-	segment .data
-	    msg db     "Hello, Holberton", 0x0
-	    len equ     $ - msg
-formatstr:
-	              dd formatstring
+	        section .data	; Data section, initialized variables
+msg:		db "Hello world", 0 ; C string needs 0
+fmt:	    db "%s", 10, 0          ; The printf format, "\n",'0'
 
-	segment .rodata
-formatstring:	 db 25H, 73H, 0AH, 00H
+	        section .text	; Code section.
 
+	        global main	; the standard gcc entry point
+main:				; the program label for the entry point
+	        push    rbp	; set up stack frame, must be aligned
 
-	segment .text
-	    global  main
+	mov	rdi,fmt
+	mov	rsi,msg
+	mov	rax,0		; or can be  xor  rax,rax
+	        call    printf	; Call C function
 
-printstring:
-	    push    dword [esp + 4]
-	    push    dword [formatstr]
-	    call    printf
-	    add     esp, 8
-	    ret
+	pop	rbp		; restore stack
 
-main:
-	    enter 0,0
-	    pusha
-	    push msg
-	    call printstring
-
-	    popa
-	    xor eax, eax
-	    leave
-	    ret
+	mov	rax,0		; normal, no error, return value
+	ret			; return
