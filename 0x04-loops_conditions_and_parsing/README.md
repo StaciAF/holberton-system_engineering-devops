@@ -1,5 +1,4 @@
-# README.md File
-# Project 0x04. Loops, conditions and parsing
+# README.md - Project 0x04. Loops, conditions and parsing
 
 
 ## Learning Objectives
