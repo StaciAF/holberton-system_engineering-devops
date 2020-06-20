@@ -10,5 +10,4 @@ elif [ $i == 8 ]; then
 else
     echo "Holberton School"
 fi
-
 done
