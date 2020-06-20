@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# this script displays content of pwd in list with conditions
+for FILE in *
+do
+    echo "$FILE" | cut -d '-' -f2
+done
