@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# this script displays string, prints new string with SIGTERM signal
+while true
+do
+echo "To infinity and beyond"
+sleep 2
+trap "echo I am invincible!!!" SIGTERM
+done
