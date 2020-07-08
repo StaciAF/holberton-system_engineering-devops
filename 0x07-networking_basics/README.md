@@ -38,9 +38,9 @@ TCP/UDP
 
 ## Tasks
 
-### 0. OSI model mandatory
-### 1. Types of network mandatory
-### 2. MAC and IP address mandatory
-### 3. UDP and TCP mandatory
-### 4. TCP and UDP ports mandatory
-### 5. Is the host on the network mandatory
+0. OSI model mandatory
+1. Types of network mandatory
+2. MAC and IP address mandatory
+3. UDP and TCP mandatory
+4. TCP and UDP ports mandatory
+5. Is the host on the network mandatory
