@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # this script installs nginix with configuration
+
 sudo apt-get update
 sudo apt-get -y install nginix
-echo 'Holberton School' > /var/www/html/index.html
-service nginix restart
+echo 'Holberton School' > sudo tee /var/www/html/index.html
+sudo service nginix restart
