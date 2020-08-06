@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# this script launches Apache in container, returns page containing Hello Holberton
+
+sudo apt-get update
+sudo apt-get install -y apache2
+sudo apt-get install -y apache2-utils
+sudo echo "ServerName localhost" >> /etc/apache2/apache2.conf
+sudo EXPOSE 80
