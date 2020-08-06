@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # this script installs nginx with configuration
-apt-get update
+apt-get -y update
 apt-get -y install nginx
 echo "Holberton School" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
