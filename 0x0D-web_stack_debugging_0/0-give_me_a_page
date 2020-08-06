@@ -5,4 +5,5 @@ sudo apt-get update
 sudo apt-get install -y apache2
 sudo echo "ServerName localhost" >> /etc/apache2/apache2.conf
 sudo EXPOSE 80
+sudo echo "Hello Holberton"
 sudo service apache2 start
