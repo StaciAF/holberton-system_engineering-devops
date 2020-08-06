@@ -6,3 +6,4 @@ sudo apt-get install -y apache2
 sudo apt-get install -y apache2-utils
 sudo echo "ServerName localhost" >> /etc/apache2/apache2.conf
 sudo EXPOSE 80
+sudo echo "Hello Holberton" > filename
