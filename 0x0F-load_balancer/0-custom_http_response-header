@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this script installs nginx with configuration
+
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo sed -i '25a \\tadd_header X-Served-By '"1698-web-01"';' /etc/nginx/sites-available/default
+sudo service nginx restart
