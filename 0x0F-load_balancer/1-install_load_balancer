@@ -2,5 +2,5 @@
 sudo apt-get -y update
 sudo apt-get -y install haproxy
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
-echo -e "\nlisten hbnb\n\tbind *:80\n\tmode http\n\tbalance roundrobin\n\toption forwardfor\n\tserver 1698-web-01 35.196.13.145:80\n\tserver 1698-web-02 184.72.66.167:80" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo -e "\nlisten stats\n\tbind *:80\nfrontend web_server\n\tbind *:80\n\tmode http\nbackend load_balancer\n\tmode http\n\tbalance roundrobin\n\toption forwardfor\n\tserver 1698-web-01 35.196.13.145:80\n\tserver 1698-web-02 184.72.66.167:80" | sudo tee -a /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
