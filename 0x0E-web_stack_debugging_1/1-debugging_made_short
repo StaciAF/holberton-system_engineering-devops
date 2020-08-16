@@ -3,5 +3,5 @@
 sudo service nginx stop
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-kill -9 $(ps -ef | grep 'nginx' | grep -v grep | awk '{print $2}')
+kill -9 "$(pgrep -ef | grep 'nginx' | awk '{print $2}')"
 sudo service nginx restart
