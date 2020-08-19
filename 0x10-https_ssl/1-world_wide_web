@@ -1,2 +1,19 @@
 #!/usr/bin/env bash
 # this script will display information about subdomains
+dom_func () {
+    domain=$1
+    sub=$2
+    if [ "$sub" ]
+    then
+	dig $sub"."$domain | grep -A1 'ANSWER SECTION:' | tail -n -1 | awk '{ print "The subdomain " $2 " is a " $4 " record and points to " $5}'
+    elif [ "$domain" ]
+    then
+	dig "www."$domain | grep -A1 'ANSWER SECTION:' | tail -n -1 | awk '{ print "The subdomain www is a " $4 " record and points to " $5}'
+	dig "lb-01."$domain | grep -A1 'ANSWER SECTION:' | tail -n -1 | awk '{ print "The subdomain lb-01 is a " $4 " record and points to " $5}'
+	dig "web-01."$domain | grep -A1 'ANSWER SECTION:' | tail -n -1 | awk '{ print "The subdomain web-01 is a " $4 " record and points to " $5}'
+	dig "web-02."$domain | grep -A1 'ANSWER SECTION:' | tail -n -1 | awk '{ print "The subdomain web-02 is a " $4 " record and points to " $5}'
+    fi
+    return 0
+}
+dom_func $1 $2
+exit 0
