@@ -25,9 +25,9 @@ defaults
 listen stats
        bind *:80
 frontend web_server
-	 bind *:80
-	 mode http
-	 redirect scheme https if !{ ssl_fc }
+	  bind *:80
+	  mode http
+	  redirect scheme https code 301 if !{ ssl_fc }
 backend load_balancer
 	mode http
 	balance roundrobin
