@@ -24,7 +24,8 @@ defaults
 
 listen stats
        bind *:80
-       http-request redirect scheme https code 301 if !{ ssl_fc }
+frontend unsecured *:80
+	  https request redirect scheme https code 301 !{ ssl_fc}
 frontend web_server
 	 bind *:80
 	 mode http
