@@ -10,4 +10,4 @@ chmod 755 $conf
 sed -i 's/#user www-data/user nginx/' $conf
 sed -i 's/80/8080/' $avail
 pkill apache2
-sudo service nginx restart
+su nginx service nginx restart
