@@ -11,6 +11,7 @@ chmod 755 $avail
 chmod 755 $conf
 sudo nginx -t
 sudo service nginx reload
+sed -i 's/#user www-data/user nginx/' $conf
 sed -i 's/80/8080/' $avail
 pkill apache2
 sudo service nginx restart
