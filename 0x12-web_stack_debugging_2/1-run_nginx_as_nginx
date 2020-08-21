@@ -5,12 +5,8 @@ conf="/etc/nginx/nginx.conf"
 sudo service nginx start
 chown nginx:nginx $avail
 chown nginx:nginx $conf
-sudo nginx -t
-sudo service nginx reload
 chmod 755 $avail
 chmod 755 $conf
-sudo nginx -t
-sudo service nginx reload
 sed -i 's/#user www-data/user nginx/' $conf
 sed -i 's/80/8080/' $avail
 pkill apache2
