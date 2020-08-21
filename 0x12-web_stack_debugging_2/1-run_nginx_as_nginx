@@ -2,7 +2,6 @@
 # this script changes user from root to nginx for Nginx in container
 avail="/etc/nginx/sites-available/default"
 conf="/etc/nginx/nginx.conf"
-sudo service nginx start
 chown nginx:nginx $avail
 chown nginx:nginx $conf
 chmod 755 $avail
