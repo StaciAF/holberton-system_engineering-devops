@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# script to automate mysql dump, tar compression
+CURRENTDATE=`date +"%d-%m-%y"`
+mysqldump -u root -p"$1" --all-databases > backup.sql
+tar -czvf ${CURRENTDATE}.tar.gz /home/ubuntu/backup.sql
