@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # script to automate mysql dump, tar compression
-mysqldump -uroot -p'$1' --all-databases > backup.sql
-sudo tar -czf "$(date +"%d-%m-%Y").tar.gz" backup.sql
+mysqldump -uroot -p"$1" --all-databases > backup.sql
+tar -czf "$(date +"%d-%m-%Y").tar.gz" backup.sql
