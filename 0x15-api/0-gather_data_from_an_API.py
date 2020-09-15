@@ -12,15 +12,15 @@ if __name__ == '__main__':
     emp_id = int(argv[1])
     user = requests.get(url + "users/{}".format(emp_id)).json()
     get_todo = requests.get(url + "users/{}/todos".format(emp_id)).json()
-    incomplete_tasks = []
+    complete_tasks = []
     for task in get_todo:
         if task.get('completed') is True:
-            incomplete_tasks.append(task.get('title'))
+            complete_tasks.append(task.get('title'))
     EMPLOYEE_NAME = user.get('name')
-    NUM_OF_DONE_TASKS = len(incomplete_tasks)
+    NUM_OF_DONE_TASKS = len(complete_tasks)
     TOTAL_NUM_OF_TASKS = len(get_todo)
     print("Employee {} is done with tasks({}/{}):".format(EMPLOYEE_NAME,
                                                           NUM_OF_DONE_TASKS,
                                                           TOTAL_NUM_OF_TASKS))
-    for each in incomplete_tasks:
+    for each in complete_tasks:
         print("\t {}".format(each))
