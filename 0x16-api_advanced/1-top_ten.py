@@ -3,7 +3,6 @@
 this module adds a function
 """
 import json
-from pprint import pprint
 import requests
 
 
@@ -14,6 +13,7 @@ def top_ten(subreddit):
     red_req = requests.get(reddit, headers=u_head, allow_redirects=False)
     if red_req.status_code is not 200:
         print('None')
+        return
     red_json = red_req.json()
     key = 'data'
     if key in red_json:
