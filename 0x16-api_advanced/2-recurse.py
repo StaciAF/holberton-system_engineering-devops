@@ -12,8 +12,7 @@ def recurse_you(subreddit, hot_list=[]):
     u_head = {'User-Agent': 'Stacipoo'}
     red_req = requests.get(reddit, headers=u_head, allow_redirects=False)
     if red_req.status_code is not 200:
-        print('None')
-        return
+        return ('None')
     red_json = red_req.json()
     key = 'data'
     if key in red_json:
